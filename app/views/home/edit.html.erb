@@ -1,0 +1,10 @@
+<h1>Home#edit</h1>
+<p>Find me in app/views/home/edit.html.erb</p>
+
+<form action="/home/update/<%= @edit_post.id %>" method="get">
+  제목:<input type="text" name="title" value="<%= @edit_post.title %>" >
+  <br>
+  내용:<input type="text" name="content" value="<%= @edit_post.content %>">
+  <br>
+  <input type="submit" value="글쓰기">
+</form>

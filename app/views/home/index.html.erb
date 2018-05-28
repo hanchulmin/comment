@@ -1,0 +1,30 @@
+<h1>Home#index</h1>
+<p>Find me in app/views/home/index.html.erb</p>
+
+<% @post.each do |x| %>
+번호: <%= x.id %>
+제목: <a href="home/show/<%=x.id%>"><%= x.title %></a>
+내용: <%= x.content %>
+<a href="/home/edit/<%=x.id%>" class="btn btn-primary">수정</a>
+<a href="/home/delete/<%=x.id%>" class="btn btn-primary">삭제</a>
+<br><hr>
+<% end %>
+<hr>
+<form action="/home/index">
+    <input type="text" name="search">
+    <input type="submit">
+</form>
+
+
+<% if @select_post.present? %>
+<%= @select_post.each do |x| %>
+<%= x.title %>
+<%= x.content %>
+<% end %>
+
+<% else %>
+<h1>검색한 결과가 없습니다.</h1>
+<% end %>
+
+<hr>
+ <a href='/home/new'>글쓰기</a>
